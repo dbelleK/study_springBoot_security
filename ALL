@@ -1,0 +1,33 @@
+-- login-basic
+모든사용자,유저와 어드민 페이지에 따른 접근 권한 여부 로그인
+
+-- login-custom-filter
+하나의 로그인 페이지에서 학생과 선생님 접근 권한 여부에 따른 로그인
+
+-- basic-authentication-test
+test 확인
+
+-- login-mutil-chain
+Teacher로 로그인한 사람이 해당 학생 확인 가능
+
+
+<< 소스의 재활용 >>
+-- web -> student-teacher  (-> login-mutil-chain 동일하게 적용 가능)
+ 1) login-custom-filter에 있던 "student", "teacher" , "static", "templates" , "controller" 폴더들을 web -> student-teacher 로 옮김
+ 2) login-custom-filter 에서 build.gradle에 compile project(":web-student-teacher") 해주면 login-custom-filter 오류 해결
+ 3) login-custom-filter의 application.yaml에 spring:
+                                             thymeleaf:
+                                               prefix: classpath:/templates/
+                                               cache: false
+                                               check-template-location: true 설정 추가
+
+-- login-userdetails
+디비에서 가져온 유저모듈을 웹 모듈에 사용
+소스를 모듈로 나누어서 사용하는 법
+관리자 권한 유저 권한 나눠서 사용
+(login-basic : 인메모리에서 만들어논 모듈 사용)
+
+-- login-rememberme
+인증 정보를 세션 관리하는 경우, 세션 timeout이 발생하게 되면,
+remember-me 쿠키를 이용해 로그인을 기억했다가 자동으로 재로그인 시켜주는 기능
+
