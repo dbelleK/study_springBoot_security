@@ -128,6 +128,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return service;
     }
 
+    //권한체크
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -146,7 +147,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .logout(logout->
                         logout.logoutSuccessUrl("/"))
-                .exceptionHandling(error->
+                .exceptionHandling(error-> //실패시
                         error
 //                                .accessDeniedPage("/access-denied")
                                 .accessDeniedHandler(new CustomDeniedHandler())
