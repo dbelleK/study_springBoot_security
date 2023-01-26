@@ -1,0 +1,42 @@
+server:
+  port: 9060
+
+
+spring:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+
+  datasource:
+    url: jdbc:mariadb://astar-maria.c5dsp2ro13rz.ap-northeast-2.rds.amazonaws.com:3306/moca_admin
+    username: astar6
+    password: dktmxkzjavjsl*6
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+    check-template-location: true
+    suffix: .html
+
+#  web:
+#    resources:
+#      static-locations:
+
+logging:
+  level:
+    org.springframework.web: trace

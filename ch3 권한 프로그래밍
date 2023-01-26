@@ -6,3 +6,9 @@
 // 실습
 -- comp -> paper-user : 학교, 학생-선생님 도메인 설계
 -- comp -> paper : 시험지 템플릿 도메인
+-- server -> paper-app : thymeleaf 화면 만들기
+                                              implementation project(":comp-paper")
+                                              implementation project(":comp-paper-user")
+                                              implementation project(":web-site-manager")
+                                              implementation project(":web-site-student")
+                                              implementation project(":web-site-teacher")
