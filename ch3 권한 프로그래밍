@@ -1,0 +1,8 @@
+-- test -> web-util
+-- server -> authority-test
+-- server -> authority-acl
+
+
+// 실습
+-- comp -> paper-user : 학교, 학생-선생님 도메인 설계
+-- comp -> paper : 시험지 템플릿 도메인
