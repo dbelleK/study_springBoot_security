@@ -1,0 +1,5 @@
+-- security-advanced
+시간에 따른 토큰 만료 , 만료, 토근 등등..
+
+-- sns-logins
+goole, naver 로그인으로 권한을 받으면 페이지 보이는 로직
